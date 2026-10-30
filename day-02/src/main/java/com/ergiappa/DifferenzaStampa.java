@@ -7,7 +7,6 @@ public class DifferenzaStampa {
 
         System.out.println();
 
-
         System.out.println("Primo messaggio con println");
         System.out.println("Secondo messaggio con println");
     }
