@@ -23,5 +23,8 @@ public class TestPersona {
         System.out.println("Seconda persona:");
         System.out.println("Nome: " + p2.nome);
         System.out.println("Età: " + p2.eta);
+
+        p1.saluta();
+        p2.saluta();
     }
 }
