@@ -1,28 +1,36 @@
+
+import java.util.Scanner;
+
 public class TestPersona {
+
     public static void main(String[] args) {
 
-        Persona p1 = new Persona("John", 28);
-        Persona p2 = new Persona("Michael", 29);
-        Persona p3 = new Persona("John Michael", 30);
+        Scanner scanner = new Scanner(System.in);
 
+        Persona p1 = new Persona("John", 30, 16, "giapponese");
 
-        //Login di due persone
+        System.out.println("Nome: " + p1.getNome());
+        System.out.println("Età: " + p1.getEta());
+
+        System.out.println("Inserisci il tuo giorno preferito (1-7):");
+        int giorno = scanner.nextInt();
+
+        p1.setGiornoPreferito(giorno);
+
+        System.out.println("Inserisci la tua materia preferita:");
+        String materia = scanner.next();
+
+        System.out.println("Giorno preferito: " + p1.getNomeGiorno());
+
+        // La materia viene gestita tramite switch
+        // sull'attributo materiaPreferita.
+
+        System.out.println("Materia preferita: " + p1.descriviMateria());
+
         p1.login();
-        p2.login();
 
-        //Concatenazione stringhe e valori
+        System.out.println("Online: " + p1.isOnline());
 
-        System.out.println(
-                p1.getNome() + " è online: " + p1.isOnline()
-        );
-
-        System.out.println(
-                p2.getNome() + " è online: " + p2.isOnline()
-        );
-
-        System.out.println(
-                p3.getNome() + " è online: " + p3.isOnline()
-        );
-
+        scanner.close();
     }
 }
