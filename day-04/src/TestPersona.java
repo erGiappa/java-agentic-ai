@@ -1,33 +1,28 @@
-public class TestPersona{
+public class TestPersona {
     public static void main(String[] args) {
 
-        //Creazione oggetti
-        Persona p1 = new Persona("JohnM", 29);
-        Persona p2 = new Persona("JMichael", 25);
+        Persona p1 = new Persona("John", 28);
+        Persona p2 = new Persona("Michael", 29);
+        Persona p3 = new Persona("John Michael", 30);
 
-        //Modifica dei campi usando i setter
-        p1.setNome("John");
-        p1.setEta(30);
 
-        p2.setNome("Michael");
-        p2.setEta(24);
+        //Login di due persone
+        p1.login();
+        p2.login();
 
-        // Tentativo di inserire un'età negativa
-        p1.setEta(-5);
+        //Concatenazione stringhe e valori
 
-        // Richiamo dei metodi
-        p1.saluta();
-        p2.saluta();
+        System.out.println(
+                p1.getNome() + " è online: " + p1.isOnline()
+        );
 
-        p1.invecchia();
+        System.out.println(
+                p2.getNome() + " è online: " + p2.isOnline()
+        );
 
-        // Lettura dei dati usando esclusivamente i getter
-        System.out.println("\nPrima persona:");
-        System.out.println("Nome: " + p1.getNome());
-        System.out.println("Età: " + p1.getEta());
+        System.out.println(
+                p3.getNome() + " è online: " + p3.isOnline()
+        );
 
-        System.out.println("\nSeconda persona:");
-        System.out.println("Nome: " + p2.getNome());
-        System.out.println("Età: " + p2.getEta());
     }
 }

@@ -1,53 +1,47 @@
 public class Persona {
 
-    //Campi privati
     private String nome;
     private int eta;
+    private boolean isOnline;
+
 
     //Costruttore
     public Persona(String nome, int eta) {
         this.nome = nome;
 
-        if (eta > 0){
-            this.eta = eta;
-        } else {
-            this.eta = 0;
-        }
+        setEta(eta);
+
+        isOnline = false;
     }
 
-    //Getter nome
-    public  String getNome() {
+    public String getNome() {
         return nome;
-    }
 
-    //Getter età
+    }
     public int getEta() {
         return eta;
     }
-
-    //Setter nome
-    public void setNome(String nuovoNome) {
-        nome = nuovoNome;
-    }
-
-    //Setter età con validazione
     public void setEta(int nuovaEta) {
-        if (nuovaEta > 0) {
+        if (nuovaEta > 0){
             eta = nuovaEta;
-            System.out.println("Età modificata correttamente!");
         } else {
-            System.out.println("Errore, età deve essere positiva!");
+            System.out.println("Errore");
+            eta = 0;
         }
     }
 
-    //Metodo saluta
-    public void saluta(){
-        System.out.println("Ciao, il mio nome è " + nome);
+    //Getter booleano
+    public boolean isOnline() {
+        return isOnline;
     }
 
-    //Metodo invecchia
-    public void invecchia(){
-        eta++;
-
+    //Imposta la persona online
+    public void login(){
+        isOnline = true;
     }
+
+    public void logout(){
+        isOnline = false;
+    }
+
 }
