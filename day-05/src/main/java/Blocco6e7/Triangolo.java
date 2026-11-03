@@ -10,8 +10,16 @@ public class Triangolo extends Shape {
         this.base = base;
         this.altezza = altezza;
     }
+
     @Override
     public double area() {
         return (base * altezza) / 2;
+    }
+
+    @Override
+    public void descrivi() {
+        System.out.println("Sono un triangolo di colore " + color
+                + ", con base " + base
+                + " e altezza " + altezza);
     }
 }

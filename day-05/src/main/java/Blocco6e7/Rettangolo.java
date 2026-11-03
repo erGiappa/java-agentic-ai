@@ -14,4 +14,11 @@ public class Rettangolo extends Shape {
     public double area() {
         return base * altezza;
     }
+    @Override
+    public void descrivi() {
+        System.out.println("Sono un rettangolo di colore "
+        + color + ", con base " + base
+        + " e altezza " + altezza);
+    }
 }
+

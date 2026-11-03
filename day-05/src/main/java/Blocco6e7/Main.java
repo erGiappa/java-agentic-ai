@@ -1,29 +1,24 @@
 package Blocco6e7;
 
+import java.util.ArrayList;
+
 public class Main {
-
-    public static void stampaAree(Shape[] figure){
-
-        for (Shape s : figure){
-
-            System.out.println("Area: " + s.area());
-            System.out.println("Colore: " + s.getColor());
-
-            System.out.println();
-        }
-    }
 
     public static void main(String[] args) {
 
-        Shape[] figure = {
-                new Cerchio(5, "Rosso"),
-                new Rettangolo(4, 6, "Blu"),
-                new Cerchio(3, "Verde"),
-                new Rettangolo(8, 2, "Giallo"),
-                new Triangolo(10, 5, "Arancione")
-        };
+        ArrayList<Shape> figure = new ArrayList<>();
 
-        stampaAree(figure);
+                figure.add(new Cerchio(5, "Rosso"));
+                figure.add(new Rettangolo(4, 6, "Blu"));
+                figure.add(new Triangolo(10, 5, "Arancione"));
+                figure.add(new Quadrato(5, "Viola"));
+
+                for (Shape s : figure) {
+                    s.descrivi();
+                    System.out.println();
+                }
 
     }
 }
+
+

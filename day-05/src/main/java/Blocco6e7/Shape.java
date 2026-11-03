@@ -9,8 +9,17 @@ public abstract  class Shape {
     }
     public abstract double area();
 
+    public abstract void descrivi();
+
     public String getColor() {
         return color;
+    }
+
+    public String toString(){
+        return "Tipo: " + getClass().getSimpleName()
+        + " Area: " + area()
+                + " Color: " + color;
+
     }
 
 }

@@ -9,7 +9,12 @@ public class Cerchio extends Shape{
         this.raggio = raggio;
     }
     @Override
-    public double area(){
+    public double area() {
         return Math.PI * raggio * raggio;
     }
+    @Override
+        public void descrivi() {
+            System.out.println("Sono un cerchio di colore " + color
+                    + ", con raggio " + raggio);
+        }
 }
