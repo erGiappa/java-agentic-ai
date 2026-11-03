@@ -66,9 +66,20 @@ public class Persona {
         this.materiaPreferita = materiaPreferita;
     }
 
+    public void presentati(){
+
+        System.out.println("Mi chiamo " +  nome);
+        System.out.println("Ho " +  eta + " anni");
+        System.out.println("Sono online: " +  isOnline);
+
+    }
     //Getter booleano
     public boolean isOnline() {
         return isOnline;
+    }
+
+    public boolean isAdult(){
+        return eta >= 18;
     }
 
     //Imposta la persona online
