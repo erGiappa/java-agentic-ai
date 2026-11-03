@@ -3,21 +3,25 @@
 public class Main {
     public static void main(String[] args) {
 
+        System.out.println("****Creazione studente****");
+
         //Creazione Studente
         Studente s1 = new Studente("John", 30, "Informatica");
 
-        //Chiamata dei metodi eriditati e propri
+        System.out.println("****Presentazione****");
         s1.presentati();
+
+        System.out.println("****Studio****");
+
         s1.studia();
 
+        System.out.println("****Mostra dati****");
         s1.mostraDati();
 
-        StudenteLavoratore sl1 =
-                new StudenteLavoratore("Michael", 24, "Ingegneria");
+        System.out.println("****Manager****");
+        Manager m1 = new Manager(2000, 500);
 
-        sl1.presentati();
-        sl1.studia();
-        sl1.lavora();
+        System.out.println( "Stipendio totale: " + m1.getStipendio() + " euro");
 
     }
 }
