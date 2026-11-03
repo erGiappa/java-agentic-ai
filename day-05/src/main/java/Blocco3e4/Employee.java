@@ -1,4 +1,4 @@
-package Blocco3;
+package Blocco3e4;
 
 public class Employee {
 
@@ -14,5 +14,8 @@ public class Employee {
     }
     public double getSalary() {
         return salary;
+    }
+    public void work(){
+        System.out.println(nome + " sta lavorando.");
     }
 }
