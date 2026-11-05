@@ -6,7 +6,7 @@ CREATE TABLE magazzino (
                            codice BIGINT
 );
 
-22. Tipi stringa
+//22. Tipi stringa
 
 CREATE TABLE utenti (
                         nome VARCHAR(50),
