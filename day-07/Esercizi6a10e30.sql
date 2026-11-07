@@ -38,4 +38,11 @@ UPDATE prodotti
 SET prezzo = prezzo * 1.10
 WHERE id BETWEEN 5 AND 15;
 
+//30. Aggiornamento e verifica
+
+UPDATE articoli
+SET contenuto = 'Questo è il nuovo contenuto aggiornato dell articolo.'
+WHERE id = 30;
+
+
 
