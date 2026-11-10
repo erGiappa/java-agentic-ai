@@ -1,17 +1,50 @@
 package day10;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 
-
-public class AppContainer {
+public class AppContainer implements AutoCloseable {
 
     private Map<String, Object> beans = new HashMap<>();
 
     private String processorType;
+    private boolean closed = false;
 
-    public AppContainer(String processorType) {
-        this.processorType = processorType;
+    // Legge la configurazione dal file
+    public AppContainer() {
+
+        Properties properties = new Properties();
+
+        try (InputStream input = AppContainer.class
+                .getClassLoader()
+                .getResourceAsStream("config.properties")) {
+
+            if (input == null) {
+                throw new RuntimeException(
+                        "File config.properties non trovato!"
+                );
+            }
+
+            properties.load(input);
+
+            processorType = properties.getProperty(
+                    "payment.processor"
+            );
+
+            if (processorType == null || processorType.isBlank()) {
+                throw new RuntimeException(
+                        "Processore non specificato nel file di configurazione"
+                );
+            }
+
+        } catch (IOException e) {
+            throw new RuntimeException(
+                    "Errore nella lettura del file di configurazione", e
+            );
+        }
     }
 
     // Crea o recupera il processore
@@ -71,6 +104,9 @@ public class AppContainer {
 
         beans.put("paymentService", service);
 
+        // Inizializzazione automatica del servizio
+        service.initialize();
+
         return service;
     }
 
@@ -122,5 +158,24 @@ public class AppContainer {
         throw new RuntimeException(
                 "Bean non trovato: " + type.getName()
         );
+    }
+
+    // Chiusura del container
+    @Override
+    public void close() {
+
+        if (!closed) {
+
+            PaymentService service =
+                    (PaymentService) beans.get("paymentService");
+
+            if (service != null) {
+                service.shutdown();
+            }
+
+            closed = true;
+
+            System.out.println("Container chiuso.");
+        }
     }
 }
