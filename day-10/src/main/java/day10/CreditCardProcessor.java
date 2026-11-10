@@ -1,0 +1,10 @@
+package day10;
+
+public class CreditCardProcessor {
+
+    public void processPayment(double amount) {
+        System.out.println(
+                "Addebito di " + amount + " EURO su carta di credito"
+        );
+    }
+}
