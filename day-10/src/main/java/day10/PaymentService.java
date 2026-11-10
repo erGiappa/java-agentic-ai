@@ -2,10 +2,13 @@ package day10;
 
 public class PaymentService {
 
+    private PaymentProcessor processor;
+
+    public PaymentService(PaymentProcessor processor) {
+        this.processor = processor;
+    }
+
     public void makePayment(double amount) {
-
-        CreditCardProcessor processor = new CreditCardProcessor();
-
-        processor.processPayment(100);
+        processor.processPayment(amount);
     }
 }
