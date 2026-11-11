@@ -1,5 +1,8 @@
 package day11;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class PayPalProcessor implements PaymentProcessor {
 
     @Override
