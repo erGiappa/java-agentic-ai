@@ -1,12 +1,23 @@
 package day11;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 public class Main {
+
     public static void main(String[] args) {
 
-        PaymentProcessor creditCard = new CreditCardProcessor();
+        // Avvio del container Spring
+        AnnotationConfigApplicationContext context =
+                new AnnotationConfigApplicationContext(AppConfig.class);
 
-        PaymentService service = new PaymentService(creditCard);
+        // Recupero del Bean PaymentService
+        PaymentService service =
+                context.getBean(PaymentService.class);
 
-        service.makePayment(250);
+        // Elaborazione del pagamento
+        service.makePayment(150);
+
+        // Chiusura del container
+        context.close();
     }
 }
