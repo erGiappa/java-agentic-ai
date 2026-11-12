@@ -1,24 +1,20 @@
 package com.example.taskapi;
 
-
 public class Task {
 
     private long id;
     private String title;
     private boolean completed;
 
-    // Costruttore vuoto
     public Task() {
     }
 
-    // Costruttore completo
     public Task(long id, String title, boolean completed) {
         this.id = id;
         this.title = title;
         this.completed = completed;
     }
 
-    // Getter e Setter
     public long getId() {
         return id;
     }
@@ -43,4 +39,3 @@ public class Task {
         this.completed = completed;
     }
 }
-
