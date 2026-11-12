@@ -2,13 +2,19 @@
 package com.example.taskapi;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @RestController
 @RequestMapping("/api/tasks")
@@ -16,6 +22,9 @@ public class TaskController {
 
     private final List<Task> tasks = new ArrayList<>();
     private final AtomicLong counter = new AtomicLong();
+    private static final Logger log =
+            LoggerFactory.getLogger(TaskController.class);
+
 
     // GET: recupera tutti i task
     @GetMapping
@@ -33,6 +42,7 @@ public class TaskController {
                     "Titolo obbligatorio"
             );
         }
+        log.info("Creazione nuovo task: {}", newTask.getTitle());
 
         newTask.setId(counter.incrementAndGet());
         tasks.add(newTask);
@@ -61,6 +71,7 @@ public class TaskController {
                 : ResponseEntity.notFound().build();
     }
 
+
     // PUT: modifica un task tramite ID
     @PutMapping("/{id}")
     public ResponseEntity<Task> updateTask(
@@ -80,7 +91,37 @@ public class TaskController {
 
         return ResponseEntity.notFound().build();
     }
+
+
+    // Restituisce tutti i task ordinati alfabeticamente per titolo
+    @GetMapping("/ordinati")
+    public List<Task> getSortedTasks() {
+
+        return tasks.stream()
+                .sorted(Comparator.comparing(Task::getTitle))
+                .toList();
+    }
+
+    // Restituisce i task filtrati in base al loro stato di completamento
+    @GetMapping(params = "completed")
+    public List<Task> getTasksByCompletion(
+            @RequestParam boolean completed) {
+
+        return tasks.stream()
+                .filter(t -> t.isCompleted() == completed)
+                .toList();
+    }
+
+    // Restituisce il numero totale di task presenti
+    @GetMapping("/count")
+    public Map<String, Object> getTaskCount() {
+
+        return Map.of("totalTasks", tasks.size());
+    }
 }
+
+
+
 
 
 
