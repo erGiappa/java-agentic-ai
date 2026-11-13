@@ -1,11 +1,9 @@
 
 package com.example.taskapi;
 
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.atomic.AtomicLong;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,23 +11,30 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
-import org.springframework.web.bind.annotation.RequestParam;
+import java.net.URI;
+
+
 
 
 @RestController
 @RequestMapping("/api/tasks")
 public class TaskController {
 
-    private final List<Task> tasks = new ArrayList<>();
-    private final AtomicLong counter = new AtomicLong();
     private static final Logger log =
             LoggerFactory.getLogger(TaskController.class);
+
+    private final TaskService service;
+
+    public TaskController(TaskService service) {
+        this.service = service;
+    }
+
 
 
     // GET: recupera tutti i task
     @GetMapping
     public List<Task> getAllTasks() {
-        return tasks;
+        return service.findAll();
     }
 
     // POST: crea un nuovo task
@@ -42,19 +47,22 @@ public class TaskController {
                     "Titolo obbligatorio"
             );
         }
+
         log.info("Creazione nuovo task: {}", newTask.getTitle());
 
-        newTask.setId(counter.incrementAndGet());
-        tasks.add(newTask);
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(newTask);
+        Task created = service.create(newTask);
+
+        URI location = URI.create("/api/tasks/" + created.getId());
+
+        return ResponseEntity.created(location).body(created);
     }
 
     // GET: recupera un task tramite ID
     @GetMapping("/{id}")
     public ResponseEntity<Task> getTaskById(@PathVariable long id) {
 
-        return tasks.stream()
+        return service.findAll().stream()
                 .filter(t -> t.getId() == id)
                 .findFirst()
                 .map(ResponseEntity::ok)
@@ -65,7 +73,7 @@ public class TaskController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteTask(@PathVariable long id) {
 
-        boolean removed = tasks.removeIf(t -> t.getId() == id);
+        boolean removed = service.findAll().removeIf(t -> t.getId() == id);
 
         return removed ? ResponseEntity.noContent().build()
                 : ResponseEntity.notFound().build();
@@ -78,7 +86,7 @@ public class TaskController {
             @PathVariable long id,
             @RequestBody Task updated) {
 
-        for (Task t : tasks) {
+        for (Task t : service.findAll()) {
 
             if (t.getId() == id) {
 
@@ -88,7 +96,6 @@ public class TaskController {
                 return ResponseEntity.ok(t);
             }
         }
-
         return ResponseEntity.notFound().build();
     }
 
@@ -97,7 +104,7 @@ public class TaskController {
     @GetMapping("/ordinati")
     public List<Task> getSortedTasks() {
 
-        return tasks.stream()
+        return service.findAll().stream()
                 .sorted(Comparator.comparing(Task::getTitle))
                 .toList();
     }
@@ -107,7 +114,7 @@ public class TaskController {
     public List<Task> getTasksByCompletion(
             @RequestParam boolean completed) {
 
-        return tasks.stream()
+        return service.findAll().stream()
                 .filter(t -> t.isCompleted() == completed)
                 .toList();
     }
@@ -116,7 +123,13 @@ public class TaskController {
     @GetMapping("/count")
     public Map<String, Object> getTaskCount() {
 
-        return Map.of("totalTasks", tasks.size());
+        return Map.of("totalTasks", service.findAll().size());
+    }
+
+    //Elimina tutti i task
+    @DeleteMapping
+    public void clearAll(){
+        service.findAll().clear();
     }
 }
 
