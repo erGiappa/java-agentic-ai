@@ -1,3 +1,8 @@
+/**
+ * Dimostrazione del fenomeno dell'overflow
+ * utilizzando il tipo primitivo byte.
+ */
+
 
 public class Overflow {
     public static void main(String[] args) {

@@ -1,3 +1,10 @@
+/**
+ * Esempio degli otto tipi primitivi disponibili in Java.
+ *
+ * Ogni variabile viene dichiarata con un tipo specifico
+ * e inizializzata con un valore compatibile.
+ */
+
 
 public class TipiPrimitivi {
     public static void main(String[] args) {

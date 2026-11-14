@@ -1,4 +1,6 @@
-package com.ergiappa;
+/**
+ * Esempio di dichiarazione e utilizzo del tipo char.
+ */
 
 public class Caratteri {
     public static void main(String[] args) {

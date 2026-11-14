@@ -1,4 +1,7 @@
-package com.ergiappa;
+/**
+ * Esempio di concatenazione di stringhe
+ * mediante l'operatore +.
+ */
 
 public class Concatenazione {
     public static void main(String[] args) {

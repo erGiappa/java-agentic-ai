@@ -1,5 +1,8 @@
 package com.ergiappa;
 
+/**
+ * Dimostrazione della differenza tra print() e println().
+ */
 
 public class StampaSequenza {
 

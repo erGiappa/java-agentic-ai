@@ -1,4 +1,6 @@
-package com.ergiappa;
+/**
+ * Dimostrazione dell'immutabilità delle String in Java.
+ */
 
 public class StringImmutabile {
     public static void main(String[] args) {

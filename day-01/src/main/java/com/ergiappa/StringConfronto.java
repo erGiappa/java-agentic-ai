@@ -1,4 +1,7 @@
-package com.ergiappa;
+/**
+ * Dimostrazione della differenza tra == ed equals()
+ * quando vengono confrontate due String.
+ */
 
 public class StringConfronto {
     public static void main(String[] args) {

@@ -1,4 +1,7 @@
-package com.ergiappa;
+/**
+ * Confronto tra un tipo primitivo int
+ * e un tipo riferimento String.
+ */
 
 
 public class ConfrontoTipi {

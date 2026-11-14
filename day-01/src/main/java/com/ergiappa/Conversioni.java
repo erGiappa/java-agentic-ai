@@ -1,4 +1,7 @@
-package com.ergiappa;
+/**
+ * Esempio di conversione implicita ed esplicita
+ * tra tipi numerici primitivi.
+ */
 
 public class Conversioni {
     public static void main(String[] args) {

@@ -1,4 +1,7 @@
-package com.ergiappa;
+/**
+ * Esempio di dichiarazioni multiple e singole
+ * di variabili dello stesso tipo.
+ */
 
 
 public class Dichiarazioni {
