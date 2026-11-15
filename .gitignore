@@ -5,3 +5,8 @@
 .DS_Store
 out/
 
+/day-01/.gitignore
+/day-01/pom.xml
+/day-02/.gitignore
+/day-02/pom.xml
+
