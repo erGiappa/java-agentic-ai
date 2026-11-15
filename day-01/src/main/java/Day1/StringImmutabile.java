@@ -1,3 +1,5 @@
+package Day1;
+
 /**
  * Dimostrazione dell'immutabilità delle String in Java.
  */

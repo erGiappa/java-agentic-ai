@@ -1,3 +1,5 @@
+package Day1;
+
 /**
  * Esempio di conversione implicita ed esplicita
  * tra tipi numerici primitivi.

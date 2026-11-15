@@ -1,3 +1,5 @@
+package Day1;
+
 /**
  * Confronto tra un tipo primitivo int
  * e un tipo riferimento String.

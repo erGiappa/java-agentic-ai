@@ -1,3 +1,5 @@
+package Day1;
+
 /**
  * Esempio di utilizzo del metodo main() e di un secondo
  * metodo static definito all'interno della stessa classe.

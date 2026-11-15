@@ -1,4 +1,4 @@
-package com.ergiappa;
+package Day1;
 
 /**
  * Esempio di tipizzazione statica in Java.

@@ -1,3 +1,5 @@
+package Day1;
+
 /**
  * Esempio di dichiarazioni multiple e singole
  * di variabili dello stesso tipo.

@@ -1,3 +1,5 @@
+package Day1;
+
 /**
  * Dimostrazione della differenza tra == ed equals()
  * quando vengono confrontate due String.

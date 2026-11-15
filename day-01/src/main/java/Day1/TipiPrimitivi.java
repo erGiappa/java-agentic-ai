@@ -1,3 +1,5 @@
+package Day1;
+
 /**
  * Esempio degli otto tipi primitivi disponibili in Java.
  *

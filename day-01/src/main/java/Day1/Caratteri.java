@@ -1,3 +1,5 @@
+package Day1;
+
 /**
  * Esempio di dichiarazione e utilizzo del tipo char.
  */

@@ -1,4 +1,4 @@
-package com.ergiappa;
+package Day1;
 
 /**
  * Dimostrazione della differenza tra print() e println().

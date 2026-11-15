@@ -1,3 +1,5 @@
+package Day1;
+
 /**
  * Esempio di concatenazione di stringhe
  * mediante l'operatore +.
