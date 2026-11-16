@@ -1,0 +1,18 @@
+
+/* Selettore per tag */
+p {
+    font-size: 16px;
+    color: gray;
+}
+
+/* Selettore per classe */
+.importante {
+    color: red;
+    font-weight: bold;
+}
+
+/* Selettore per ID */
+#protagonista {
+    color: green;
+    font-size: 20px;
+}

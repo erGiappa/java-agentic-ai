@@ -1,0 +1,26 @@
+
+/* Sfondo della pagina */
+body {
+    background-color: lightblue;
+}
+
+/* Titolo principale */
+h1 {
+    color: #00008B;
+}
+
+/* Sottotitolo */
+h2 {
+    color: rgb(255, 0, 0);
+}
+
+/* Paragrafo evidenziato */
+.evidenziato {
+    background-color: yellow;
+    color: black;
+}
+
+/* Paragrafo secondario */
+.secondario {
+    color: hsl(0, 0%, 70%);
+}

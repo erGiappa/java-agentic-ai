@@ -1,0 +1,29 @@
+
+/* Stile comune a tutti i box */
+.box {
+    width: 300px;
+}
+
+/* Primo box */
+.primo {
+    background-color: lightgreen;
+    padding: 10px;
+    margin: 20px;
+    border: 2px solid black;
+}
+
+/* Secondo box */
+.secondo {
+    background-color: lightblue;
+    padding: 30px;
+    margin: 5px;
+    border: 5px dashed blue;
+}
+
+/* Terzo box */
+.terzo {
+    background-color: lightcoral;
+    padding: 0;
+    margin: 40px;
+    border: 1px dotted red;
+}

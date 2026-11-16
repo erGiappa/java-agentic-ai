@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Classi e specificità</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Classi e specificità CSS</h1>
+
+    <!-- Colore atteso: grigio.
+         Vince il selettore per tag p. -->
+    <p>Questo è il primo paragrafo.</p>
+
+    <!-- Colore atteso: rosso.
+         Vince la classe .importante rispetto al selettore p. -->
+    <p class="importante">Questo è il secondo paragrafo importante.</p>
+
+    <!-- Colore atteso: verde.
+         Vince l'id protagonista rispetto al selettore p. -->
+    <p id="protagonista">Questo è il terzo paragrafo protagonista.</p>
+
+    <!-- Colore atteso: viola.
+         Vince lo stile inline rispetto alle regole CSS esterne. -->
+    <p style="color: purple;">Questo è il quarto paragrafo.</p>
+
+    <!-- Colore atteso: rosso.
+         Vince la classe .importante rispetto al selettore p. -->
+    <p class="importante">Questo è il quinto paragrafo importante.</p>
+
+</body>
+</html>
