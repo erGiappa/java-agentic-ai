@@ -1,0 +1,43 @@
+
+/* Primo div: colore pieno e bordo arrotondato */
+.box1 {
+    width: 100%;
+    height: 200px;
+    padding: 20px;
+    background-color: lightblue;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+/* Secondo div: gradiente lineare */
+.box2 {
+    width: 100%;
+    height: 200px;
+    padding: 20px;
+    background: linear-gradient(to right, blue, purple);
+    color: white;
+    box-sizing: border-box;
+}
+
+/* Terzo div: immagine come sfondo */
+.box3 {
+    width: 100%;
+    height: 200px;
+    padding: 20px;
+    background-image: url("https://picsum.photos/800/400");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    box-sizing: border-box;
+}
+
+/* Quarto div: bordo a sinistra e sfondo trasparente */
+.box4 {
+    width: 100%;
+    height: 200px;
+    padding: 20px;
+    border-left: 4px solid red;
+    background-color: rgba(255, 255, 0, 0.5);
+    color: black;
+    box-sizing: border-box;
+}

@@ -1,0 +1,27 @@
+
+/* Stato normale */
+a:link {
+    color: blue;
+    text-decoration: none;
+}
+
+/* Link già visitato */
+a:visited {
+    color: darkblue;
+}
+
+/* Quando il mouse passa sopra il link */
+a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+/* Quando si clicca sul link */
+a:active {
+    background-color: yellow;
+}
+
+/* Quando il link riceve il focus */
+a:focus {
+    outline: 2px solid orange;
+}

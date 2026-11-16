@@ -1,0 +1,33 @@
+
+/* Stile generale della pagina */
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+}
+
+/* Blocco dell'articolo */
+.articolo {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* Titolo principale */
+h1 {
+    font-size: 2.5rem;
+}
+
+/* Sottotitolo */
+.sottotitolo {
+    text-transform: uppercase;
+}
+
+/* Data */
+.data {
+    font-style: italic;
+    color: gray;
+}
+
+/* Paragrafi */
+.articolo p {
+    line-height: 1.7;
+    max-width: 650px;
+}
