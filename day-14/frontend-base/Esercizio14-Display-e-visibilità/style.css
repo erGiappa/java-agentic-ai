@@ -1,0 +1,77 @@
+/* Stile generale della pagina */
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+/* Span inline:
+Gli elementi rimangono sulla stessa riga.
+Non accettano width e height. */
+
+.span1 {
+    background-color: lightblue;
+}
+
+.span2 {
+    background-color: lightgreen;
+}
+
+.span3 {
+    background-color: lightcoral;
+}
+
+/* Inline-block:
+Gli elementi rimangono sulla stessa riga,
+ma accettano width e height. */
+
+.box {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.box1 {
+    background-color: lightblue;
+}
+
+.box2 {
+    background-color: lightgreen;
+}
+
+.box3 {
+    background-color: lightcoral;
+}
+
+/* Display none: 
+l'elemento scompare completamente
+e non occupa spazio nella pagina. */
+
+.none {
+    display: none;
+    background-color: orange;
+    padding: 20px;
+}
+
+/* Visibility hidden:
+l'elemento diventa invisibile,
+ma continua a occupare spazio */
+
+.hidden {
+    visibility: hidden;
+    background-color: violet;
+    padding: 20px;
+}
+
+/* Opacity;
+l'elemento rimane visibile, 
+ma con una trasparenza del 70%. */
+
+.opacity {
+    opacity: 0.3;
+    background-color: lightblue;
+    padding: 15px;
+}
+
