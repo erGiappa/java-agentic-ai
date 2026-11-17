@@ -1,0 +1,116 @@
+
+/* STILE GENERALE DELLA PAGINA */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e9eef5;
+
+    /* FLEXBOX: centra la card orizzontalmente e verticalmente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Altezza minima pari allo schermo */
+    min-height: 100vh;
+}
+
+/* CARD: contenitore del biglietto da visita */
+.card {
+    background-color: white;
+    max-width: 400px;
+    width: 90%;
+    padding: 30px;
+    text-align: center;
+
+    /* Ombra della card */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+
+    /* Angoli arrotondati */
+    border-radius: 15px;
+}
+
+/* IMMAGINE PROFILO */
+.profile-img {
+    width: 150px;
+    height: 150px;
+
+    /* Rende l'immagine circolare */
+    border-radius: 50%;
+
+    object-fit: cover;
+}
+
+/* NOME */
+h1 {
+    color: #26364a;
+    margin-bottom: 5px;
+}
+
+/* RUOLO */
+h2 {
+    color: #777;
+    font-size: 18px;
+    font-weight: normal;
+    margin-top: 0;
+}
+
+/* LISTA CONTATTI */
+.contacts {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0;
+}
+
+.contacts li {
+    margin: 12px 0;
+    color: #444;
+}
+
+.contacts a {
+    color: #2878c8;
+    text-decoration: none;
+}
+
+/* EFFETTO HOVER SUI LINK CONTATTI */
+.contacts a:hover {
+    text-decoration: underline;
+}
+
+/* CONTENITORE SOCIAL */
+.social {
+    margin-top: 20px;
+}
+
+/* BOTTONI SOCIAL */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+
+    transition: background-color 0.3s;
+}
+
+/* BOTTONE Github */
+.github {
+    background-color: #433e40;
+}
+
+/* BOTTONE LINKEDIN */
+.linkedin {
+    background-color: #0a66c2;
+}
+
+/* HOVER Github */
+.github:hover {
+    background-color:  #433e40;;
+}
+
+/* HOVER LINKEDIN */
+.linkedin:hover {
+    background-color: #064b91;
+}

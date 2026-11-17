@@ -1,0 +1,139 @@
+
+/* STILE GENERALE */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f2ec;
+    color: #333;
+}
+
+/* HEADER: intestazione */
+header {
+    background-color: #292929;
+    color: white;
+    padding: 20px 40px;
+
+    /* Flexbox: nome a sinistra e menu a destra */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 26px;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Effetto al passaggio del mouse */
+nav a:hover {
+    color: #e5b86b;
+}
+
+/* MAIN: contenuto principale */
+main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* TITOLO DEL MENU */
+.titolo-menu {
+    text-align: center;
+    color: #693c27;
+    margin: 30px 0;
+    font-size: 32px;
+}
+
+/* CARD DELLE CATEGORIE */
+.categoria {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 25px;
+
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* TITOLI DELLE CATEGORIE */
+.categoria h2 {
+    color: #8b4b2e;
+    border-bottom: 2px solid #d8b58c;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+/* LISTA DEI PIATTI */
+.categoria ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* RIGA DI OGNI PIATTO */
+.categoria li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 12px 0;
+    border-bottom: 1px dotted #aaa;
+}
+
+/* ULTIMO PIATTO: niente linea finale */
+.categoria li:last-child {
+    border-bottom: none;
+}
+
+/* PREZZI */
+.prezzo {
+    font-weight: bold;
+    color: #8b4b2e;
+    white-space: nowrap;
+    margin-left: 15px;
+}
+
+/* FOOTER */
+footer {
+    background-color: #292929;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 8px;
+}
+
+/* RESPONSIVE: adattamento agli schermi piccoli */
+@media (max-width: 600px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .categoria {
+        padding: 18px;
+    }
+}
