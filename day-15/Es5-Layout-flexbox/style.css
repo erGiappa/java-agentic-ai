@@ -1,0 +1,136 @@
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f1f4f9;
+}
+
+/* LAYOUT PRINCIPALE */
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  background: #202b40;
+  color: white;
+  padding: 25px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar a {
+  color: #cbd5e1;
+  text-decoration: none;
+}
+
+/* MAIN */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* TOPBAR */
+.topbar {
+  background: white;
+  padding: 20px 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.topbar input {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 250px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #6366f1;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CONTENT */
+.content {
+  padding: 30px;
+}
+
+.content h1 {
+  margin-bottom: 25px;
+}
+
+/* STAT CARDS */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.stat-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+
+  flex: 1 1 200px;
+
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.stat-card h3 {
+  color: #64748b;
+  margin-bottom: 15px;
+}
+
+.stat-card p {
+  font-size: 26px;
+  font-weight: bold;
+  color: #202b40;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .sidebar {
+    width: 150px;
+    padding: 15px;
+  }
+
+  .topbar {
+    padding: 15px;
+  }
+
+  .topbar input {
+    width: 100%;
+  }
+
+  .content {
+    padding: 15px;
+  }
+}
