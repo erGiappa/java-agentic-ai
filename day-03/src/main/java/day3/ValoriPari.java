@@ -3,6 +3,7 @@ package day3;
 public class ValoriPari {
     public static void main(String[] args) {
 
+        // Matrice 3x3 contenente i valori da controllare.
         int[][] matrice = {
                 {1, 2, 3},
                 {4, 5, 6},
@@ -11,6 +12,7 @@ public class ValoriPari {
 
         System.out.println("Numeri pari:");
 
+        // I cicli annidati visitano ogni elemento della matrice.
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
 

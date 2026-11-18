@@ -5,8 +5,10 @@ import java.util.Scanner;
 public class SommaColonnaSpecifica {
     public static void main(String[] args) {
 
+        // Inizializza lo Scanner per acquisire il numero della colonna.
         Scanner scanner = new Scanner(System.in);
 
+        // Matrice 3x3 usata per il calcolo.
         int[][] matrice = {
                 {1, 2, 3},
                 {4, 5, 6},
@@ -14,6 +16,7 @@ public class SommaColonnaSpecifica {
         };
 
 
+        // Il primo ciclo scorre le righe e il secondo le colonne.
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 System.out.print(matrice[i][j] + " ");
@@ -25,10 +28,12 @@ public class SommaColonnaSpecifica {
         System.out.print("Quale colonna vuoi sommare (1-3)? ");
         int colonna = scanner.nextInt();
 
+        // Verifica che il numero inserito corrisponda a una colonna esistente.
         if (colonna >= 1 && colonna <= 3) {
 
             int somma = 0;
 
+            // Scorre tutte le righe usando lo stesso indice di colonna.
             for (int i = 0; i < 3; i++) {
                 somma += matrice[i][colonna - 1];
             }
