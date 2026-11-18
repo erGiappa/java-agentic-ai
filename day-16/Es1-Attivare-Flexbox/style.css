@@ -1,0 +1,17 @@
+body{
+    font-family: Arial, sans-serif;
+}
+
+.contenitore {
+    background-color: lightblue;
+    padding: 20px;
+    display: flex;
+}
+
+.box{
+    background-color: orange;
+    padding: 30px;
+    margin: 10px;
+    text-align: center;
+    font-size: 24px;
+}
