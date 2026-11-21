@@ -1,4 +1,8 @@
+// La classe Persona.java rappresenta una persona con un nome, un'età e alcune preferenze.
+
 public class Persona {
+
+    // Gli attributi sono private, quindi sono accessibili dall'esterno solo tramite metodi getter e setter.
 
     private String nome;
     private int eta;
@@ -6,10 +10,9 @@ public class Persona {
     private int giornoPreferito;
     private String materiaPreferita;
 
-
-
     //Costruttore
     public Persona(String nome, int eta, int giornoPreferito, String materiaPreferita) {
+        //this.nome indica l'attributo della classe; nome indica il parametro del costruttore. 
         this.nome = nome;
         setEta(eta);
         this.giornoPreferito = giornoPreferito;
@@ -17,6 +20,7 @@ public class Persona {
         isOnline = false;
     }
 
+    //switch expression: l'operatore -> restituisce direttamente il valore corrispondente.
     public String getNomeGiorno() {
         return switch (giornoPreferito) {
             case 1 -> "Lunedì: si ricomincia!";
@@ -30,17 +34,17 @@ public class Persona {
         };
     }
 
+    //Il metodo descriviMateria() confronta la materia ignorando maiuscole e minuscole grazie a toLowerCase()
     public String descriviMateria() {
-
         return switch (materiaPreferita.toLowerCase()) {
             case "matematica" -> "Mi piacciono i numeri!";
             case "giapponese" -> "Mi piacciono gli anime!";
             case "informatica" -> "Mi piace programmare!";
             default -> "Non conosco questa materia!";
-
         };
     }
 
+    //I getter restituiscono i valori degli attributi:
 
     public String getNome() {
         return nome;
@@ -49,6 +53,8 @@ public class Persona {
     public int getEta() {
         return eta;
     }
+
+    //Il metodo setEta() verifica che l'età sia positiva
     public void setEta(int nuovaEta) {
         if (nuovaEta > 0){
             eta = nuovaEta;
@@ -58,6 +64,7 @@ public class Persona {
         }
     }
 
+    //Il metodo setEta() verifica che l'età sia positiva
     public void setGiornoPreferito(int giornoPreferito) {
         this.giornoPreferito = giornoPreferito;
     }
@@ -66,18 +73,17 @@ public class Persona {
         this.materiaPreferita = materiaPreferita;
     }
 
+    //Il metodo presentati() stampa nome, età e stato online
     public void presentati(){
-
         System.out.println("Mi chiamo " +  nome);
         System.out.println("Ho " +  eta + " anni");
         System.out.println("Sono online: " +  isOnline);
-
     }
     //Getter booleano
     public boolean isOnline() {
         return isOnline;
     }
-
+    //Il metodo isAdult() restituisce true quando l'età è almeno 18
     public boolean isAdult(){
         return eta >= 18;
     }
