@@ -9,9 +9,12 @@
 
     <h1>Modulo di registrazione</h1>
 
+    <!-- form raccoglie i dati inseriti dall'utente. -->
     <form>
 
+        <!-- label descrive il campo; for e id collegano etichetta e input. -->
         <label for="nome">Nome:</label>
+        <!-- type="text" crea un campo per inserire testo. -->
         <input type="text" id="nome" name="nome">
         <br><br>
 
@@ -20,19 +23,23 @@
         <br><br>
 
         <label for="email">Email:</label>
+        <!-- type="email" indica che il valore deve avere il formato di un indirizzo email. -->
         <input type="email" id="email" name="email">
         <br><br>
 
         <label for="password">Password:</label>
+        <!-- type="password" nasconde i caratteri digitati. -->
         <input type="password" id="password" name="password">
         <br><br>
 
         <label for="data">Data di nascita:</label>
+        <!-- type="date" mostra un controllo per scegliere una data. -->
         <input type="date" id="data" name="data">
         <br><br>
 
         <p>Genere:</p>
 
+        <!-- radio permette una sola scelta tra elementi con lo stesso name. -->
         <input type="radio" id="maschio" name="genere" value="M">
         <label for="maschio">M</label>
 
@@ -46,6 +53,7 @@
 
         <p>Interessi:</p>
 
+        <!-- checkbox permette di selezionare anche più opzioni indipendenti. -->
         <input type="checkbox" id="sport" name="interessi" value="Sport">
         <label for="sport">Sport</label>
 
@@ -60,6 +68,7 @@
 
         <br><br>
 
+        <!-- type="submit" invia i dati compilati nel form. -->
         <button type="submit">Registrati</button>
 
     </form>
