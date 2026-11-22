@@ -9,7 +9,8 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
 
-        // 1. Creazione HashSet
+        // 1. HashSet implementa un insieme di numeri interi.
+        // Un Set non contiene elementi duplicati e HashSet non garantisce un ordine preciso.
         Set<Integer> numeri = new HashSet<>();
 
         numeri.add(5);
@@ -22,7 +23,7 @@ public class Main {
         System.out.println(numeri);
         System.out.println("----------------------------------------------");
 
-        // 2. Verifica presenza elemento
+        // 2. contains verifica se il valore 5 è presente nel Set.
         if (numeri.contains(5)) {
             System.out.println("Il numero 5 è presente!");
         } else {
@@ -31,22 +32,26 @@ public class Main {
 
         System.out.println("----------------------------------------------");
 
-        // 3. Iterazione con for-each
+        // 3. Il for-each permette di leggere tutti gli elementi del Set.
         System.out.println("Elementi del set");
 
         for (int numero : numeri) {
             System.out.print(numero);
         }
 
+        // Aggiunge un salto di riga dopo tutti i numeri.
         System.out.println();
 
         System.out.println("----------------------------------------------");
 
-        // 4. Conversione Set in List
+        // 4. ArrayList riceve tutti gli elementi del Set durante la creazione.
+        // La conversione produce una lista modificabile e conserva gli elementi
+        // come sono al momento della copia.
         List<Integer> lista = new ArrayList<>(numeri);
 
         System.out.println("Lista convertita: " + lista);
 
+        // HashSet viene usato qui per memorizzare altri numeri senza duplicati.
         Set<Integer> hashSet = new HashSet<>();
 
         hashSet.add(5);
@@ -58,8 +63,8 @@ public class Main {
 
         System.out.println("----------------------------------------------");
 
-        // 5. Creazione TreeSet
-
+        // 5. TreeSet crea un nuovo insieme ordinando gli elementi presenti in hashSet.
+        // Per numeri interi l'ordine prodotto è crescente.
         Set<Integer> treeSet = new TreeSet<>(hashSet);
 
         System.out.println("HashSet: " + hashSet);
