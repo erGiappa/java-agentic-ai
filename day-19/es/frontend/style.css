@@ -1,0 +1,221 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+    color: #263238;
+    margin-bottom: 35px;
+}
+
+#recipes_list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+#users_list,
+#posts_list,
+#carts_list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.recipe-card,
+.user-card,
+.post-card,
+.cart-card {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recipe-card:hover,
+.user-card:hover,
+.post-card:hover,
+.cart-card:hover,
+.recipe-card:focus-within,
+.user-card:focus-within,
+.post-card:focus-within,
+.cart-card:focus-within {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.14);
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.recipe-card:hover img,
+.recipe-card:focus-within img {
+    transform: scale(1.04);
+}
+
+.recipe-content {
+    padding: 20px;
+}
+
+.recipe-card h2 {
+    color: #e67e22;
+}
+
+.recipe-card h4 {
+    color: #333;
+}
+
+.recipe-card li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.recipe-card:focus-within,
+.user-card:focus-within,
+.post-card:focus-within,
+.cart-card:focus-within {
+    outline: 3px solid rgba(230, 126, 34, 0.55);
+    outline-offset: 3px;
+}
+
+.user-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: 20px auto;
+}
+
+.user-content {
+    padding: 20px;
+}
+
+.user-content h2 {
+    color: #e67e22;
+    text-align: center;
+}
+
+.user-content p {
+    line-height: 1.5;
+    color: #333;
+}
+
+.post-content,
+.cart-content {
+    padding: 20px;
+}
+
+.post-card h2,
+.cart-card h2 {
+    color: #e67e22;
+}
+
+.recipe-instructions {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition: grid-template-rows 0.3s ease, opacity 0.3s ease;
+}
+
+.recipe-instructions.is-open {
+    grid-template-rows: 1fr;
+    opacity: 1;
+}
+
+.recipe-instructions-inner {
+    min-height: 0;
+    overflow: hidden;
+}
+
+.recipe-toggle {
+    padding: 9px 13px;
+    border: 0;
+    border-radius: 6px;
+    background-color: #e67e22;
+    color: white;
+    font: inherit;
+    cursor: pointer;
+}
+
+.recipe-toggle:hover {
+    background-color: #cf6d17;
+}
+
+.recipe-toggle:focus-visible {
+    outline: 3px solid #263238;
+    outline-offset: 3px;
+}
+
+.skeleton-card {
+    min-height: 190px;
+    padding: 20px;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.skeleton-line {
+    height: 14px;
+    margin-bottom: 14px;
+    border-radius: 7px;
+    background: linear-gradient(90deg, #e8ebef 25%, #f5f6f8 50%, #e8ebef 75%);
+    background-size: 200% 100%;
+    animation: skeleton-shimmer 1.4s ease-in-out infinite;
+}
+
+.skeleton-line:first-child {
+    width: 65%;
+    height: 20px;
+}
+
+.skeleton-line:last-child {
+    width: 80%;
+}
+
+@keyframes skeleton-shimmer {
+    to {
+        background-position: -200% 0;
+    }
+}
+
+.load-error {
+    grid-column: 1 / -1;
+    padding: 16px;
+    border-left: 4px solid #b42318;
+    background: #fff1f0;
+    color: #7a271a;
+}
+
+.reveal-on-scroll {
+    transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.motion-ready .reveal-on-scroll:not(.is-visible) {
+    opacity: 0;
+    transform: translateY(14px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .motion-ready .reveal-on-scroll:not(.is-visible) {
+        opacity: 1;
+        transform: none;
+    }
+}
